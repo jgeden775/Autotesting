@@ -10,8 +10,10 @@ arc_name = f'arch_{timestamp}.zip'
 
 func.archive_results(wrk_dir, arc_dir, arc_name, 3)
 
+# Создание файла отчёта
 file = open(f"results/result_{timestamp}.txt", "w+")
 file.write(f"start time: {date}\n")
 file.close()
 
+# Запуска прогона
 os.system(f"pytest -v -s test_page.py >> results/result_{timestamp}.txt")
